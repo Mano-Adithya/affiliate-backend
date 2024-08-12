@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/www/backend
+
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 300
+
